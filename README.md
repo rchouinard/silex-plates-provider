@@ -24,6 +24,10 @@ $app->register(new \Rych\Silex\Provider\PlatesServiceProvider(), array (
     ),
 ));
 
+$app->get('/', function () use ($app) {
+    return $app['plates']->render('mytemplate');
+});
+
 ```
 
 Extensions
