@@ -1,0 +1,4 @@
+netbeans/private/*
+vendor/*
+composer.lock
+/nbproject/private/
