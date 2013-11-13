@@ -37,12 +37,12 @@ This provider also registers common extensions which work very similar to
 those found in the Symfony-Twig bridge. I hope to add more in the future, but
 right now I've only included the big ones I use regularly.
 
-=== Routing Extension ===
+### Routing Extension ###
 
 Provides the `url` and `path` functions for generating URIs. This extension is
 only available if the url_generator service is available.
 
-=== Security Extension ===
+### Security Extension ###
 
 Provides the `is_granted` function. This extension is only available if the
 security service is available.
