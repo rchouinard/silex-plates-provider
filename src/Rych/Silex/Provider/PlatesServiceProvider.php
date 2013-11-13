@@ -15,11 +15,10 @@ class PlatesServiceProvider implements ServiceProviderInterface
         $app['plates.path'] = null;
         $app['plates.folders'] = array ();
 
-        $app['plates'] = $app->share(function ($app) {
-            $plates = new \Plates\Engine($app['plates.path']);
-            $plates->app = $app;
+        $app['plates.engine'] = $app->share(function ($app) {
+            $engine = new \Plates\Engine($app['plates.path']);
             foreach ($app['plates.folders'] as $name => $path) {
-                $plates->addFolder($name, $path);
+                $engine->addFolder($name, $path);
             }
 
             if (isset($app['url_generator'])) {
@@ -29,6 +28,13 @@ class PlatesServiceProvider implements ServiceProviderInterface
             if (isset($app['security'])) {
                 $plates->loadExtension(new SecurityExtension($app['security']));
             }
+
+            return $engine;
+        });
+
+        $app['plates'] = $app->share(function ($app) {
+            $plates = new \Plates\Template($app['plates.engine']);
+            $plates->app = $app;
 
             return $plates;
         });

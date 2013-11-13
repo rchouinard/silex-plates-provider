@@ -47,16 +47,16 @@ Custom Extensions
 -----------------
 
 You may choose to register your own Plates extensions. This can be accomplished
-easily by extending the plates service.
+easily by extending the plates.engine service.
 
 ```php
 <?php
 
 /* @var $app Silex\Application */
-$app['plates'] = $app->share($app->extend('plates', function($plates, $app) {
-    $plates->addExtension(new \My_Plates_Extension());
+$app['plates.engine'] = $app->share($app->extend('plates.engine', function($engine, $app) {
+    $engine->addExtension(new \My_Plates_Extension());
 
-    return $plates;
+    return $engine;
 }));
 
 ```
