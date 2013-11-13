@@ -22,11 +22,11 @@ class PlatesServiceProvider implements ServiceProviderInterface
             }
 
             if (isset($app['url_generator'])) {
-                $plates->loadExtension(new RoutingExtension($app['url_generator']));
+                $engine->loadExtension(new RoutingExtension($app['url_generator']));
             }
 
             if (isset($app['security'])) {
-                $plates->loadExtension(new SecurityExtension($app['security']));
+                $engine->loadExtension(new SecurityExtension($app['security']));
             }
 
             return $engine;
