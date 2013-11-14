@@ -3,15 +3,26 @@ Plates Template Engine for Silex
 
 This project aims to provide integration of the [Plates](http://platesphp.com/)
 template engine into the [Silex micro-framework](http://silex.sensiolabs.org/).
+It's in the very early stages, so don't be surprised if the integration is less
+than optimal.
 
-This project is in the very early stages, so don't be surprised if the
-integration is less than optimal.
-
-This project is based very heavily on the default TwigServiceProvider and
-the Symfony-Twig bridge Twig extensions.
+The project is based very heavily on the default `TwigServiceProvider` and
+some of the Symfony-Twig bridge extensions.
 
 Usage
 -----
+
+Add the provider to your `composer.json` file:
+
+```json
+{
+    "require": {
+        "rych/silex-plates-provider": "dev-master@dev"
+    }
+}
+```
+
+Enable it in your application:
 
 ```php
 <?php
@@ -40,18 +51,18 @@ right now I've only included the big ones I use regularly.
 ### Routing Extension ###
 
 Provides the `url` and `path` functions for generating URIs. This extension is
-only available if the url_generator service is available.
+only available if `UrlGeneratorServiceProvider` is registered.
 
 ### Security Extension ###
 
-Provides the `is_granted` function. This extension is only available if the
-security service is available.
+Provides the `is_granted` function. This extension is only available if
+`SecurityServiceProvider` is registered.
 
 Custom Extensions
 -----------------
 
 You may choose to register your own Plates extensions. This can be accomplished
-easily by extending the plates.engine service.
+easily by extending the `plates.engine` service.
 
 ```php
 <?php
