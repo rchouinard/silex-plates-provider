@@ -2,7 +2,7 @@
 
 namespace Rych\Plates\Extension;
 
-use Plates\Extension\ExtensionInterface;
+use League\Plates\Extension\ExtensionInterface;
 use Symfony\Component\Security\Acl\Voter\FieldVote;
 use Symfony\Component\Security\Core\SecurityContextInterface;
 

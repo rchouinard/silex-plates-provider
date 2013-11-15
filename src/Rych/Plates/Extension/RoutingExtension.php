@@ -2,7 +2,7 @@
 
 namespace Rych\Plates\Extension;
 
-use Plates\Extension\ExtensionInterface;
+use League\Plates\Extension\ExtensionInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 class RoutingExtension implements ExtensionInterface

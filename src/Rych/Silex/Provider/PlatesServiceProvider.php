@@ -16,7 +16,7 @@ class PlatesServiceProvider implements ServiceProviderInterface
         $app['plates.folders'] = array ();
 
         $app['plates.engine'] = $app->share(function ($app) {
-            $engine = new \Plates\Engine($app['plates.path']);
+            $engine = new \League\Plates\Engine($app['plates.path']);
             foreach ($app['plates.folders'] as $name => $path) {
                 $engine->addFolder($name, $path);
             }
@@ -33,7 +33,7 @@ class PlatesServiceProvider implements ServiceProviderInterface
         });
 
         $app['plates'] = $app->share(function ($app) {
-            $plates = new \Plates\Template($app['plates.engine']);
+            $plates = new \League\Plates\Template($app['plates.engine']);
             $plates->app = $app;
 
             return $plates;
