@@ -17,7 +17,7 @@ Add the provider to your `composer.json` file:
 ```json
 {
     "require": {
-        "rych/silex-plates-provider": "dev-master@dev"
+        "rych/silex-plates-provider": "1.0.*"
     }
 }
 ```
