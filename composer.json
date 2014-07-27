@@ -10,11 +10,11 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "league/plates": "1.0.*"
+        "league/plates": ">=1.0.8,<2.2-dev"
     },
     "require-dev": {
-        "silex/silex": "~1.1",
-        "phpunit/phpunit": "3.7.*"
+        "silex/silex": "~1.2",
+        "phpunit/phpunit": "~4.1"
     },
     "autoload": {
         "psr-0": {
